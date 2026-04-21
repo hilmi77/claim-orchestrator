@@ -1,7 +1,6 @@
 import { ComponentType } from "react";
 import type { ProcessStep, StepTitle } from "../types";
 
-// Her step card'ının alacağı props tipi
 export type StepCardProps<T extends StepTitle> = {
   step: Extract<ProcessStep, { title: T }>;
   index: number;
@@ -9,7 +8,6 @@ export type StepCardProps<T extends StepTitle> = {
 
 type AnyStepComponent = ComponentType<{ step: ProcessStep; index: number }>;
 
-// Registry map — başlangıçta boş, her dosya import edilince doldurulur
 const registry = new Map<StepTitle, AnyStepComponent>();
 
 /**

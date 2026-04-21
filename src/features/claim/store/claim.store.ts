@@ -25,7 +25,6 @@ interface ClaimStore {
 }
 
 export const useClaimStore = create<ClaimStore>((set) => ({
-  // — Dynamic nodes —
   customNodes: [],
 
   addNote: (afterIndex, content) =>
@@ -47,12 +46,10 @@ export const useClaimStore = create<ClaimStore>((set) => ({
   removeNode: (id) =>
     set((s) => ({ customNodes: s.customNodes.filter((n) => n.id !== id) })),
 
-  // — AI explain —
   explainOpenFor: null,
   openExplain: (title) => set({ explainOpenFor: title }),
   closeExplain: () => set({ explainOpenFor: null }),
 
-  // — Document analyzer —
   uploadResult: { status: "idle" },
 
   analyzeDocument: async (file: File) => {
@@ -85,7 +82,6 @@ export const useClaimStore = create<ClaimStore>((set) => ({
 
   resetUpload: () => set({ uploadResult: { status: "idle" } }),
 
-  // — Step expand —
   expandedSteps: new Set([4]), // File Review (index 4) default open — In Progress
   toggleStep: (index) =>
     set((s) => {

@@ -76,7 +76,6 @@ export function ExplainAIDialog() {
   );
 }
 
-// Inline trigger button — her step'in altına konar
 export function ExplainAIButton({ stepTitle }: { stepTitle: string }) {
   const { openExplain } = useClaimStore();
   return (

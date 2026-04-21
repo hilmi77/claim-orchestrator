@@ -13,3 +13,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build artifacts
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js
+
+# Internal docs
+SETUP-INSTRUCTIONS.md
+setup.sh
+
+# AI tool caches
+.claude/
+.tldr/
+.tldrignore
+.vercel

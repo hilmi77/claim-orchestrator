@@ -8,7 +8,6 @@ interface ActionBannerProps {
 }
 
 export function ActionBanner({ claim, onActionClick }: ActionBannerProps) {
-  // actionRequired alanı olan ilk step'i bul
   const actionEntry = claim.processDetails
     .map((step, index) => ({ step, index }))
     .find(({ step }) => "actionRequired" in step && step.actionRequired);
@@ -19,7 +18,6 @@ export function ActionBanner({ claim, onActionClick }: ActionBannerProps) {
   const actionText = "actionRequired" in step ? step.actionRequired : "";
 
   const handleClick = () => {
-    // Codex feedback: butona tıklayınca ilgili step'e scroll et ve expand et
     onActionClick(index);
     const el = document.getElementById(`step-${index}`);
     if (el) {
